@@ -1,0 +1,317 @@
+/* ==========================
+    ===== general style =====
+    ========================= */
+:root {
+  font-family: "Open Sans";
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins";
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+}
+a,
+span,
+img {
+  display: flex;
+}
+body {
+  padding: 0 50px;
+}
+
+/* ====== flex items ====== */
+nav,
+header > div:nth-of-type(2),
+footer {
+  display: flex;
+  flex-direction: row;
+}
+nav a,
+header > div:first-child a,
+main section:last-of-type a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section:last-of-type {
+  display: flex;
+  flex-direction: column;
+}
+/* ===== hover items ===== */
+nav a:hover,
+header > div:first-child a:hover,
+main section:last-of-type a:hover,
+footer button:hover {
+  opacity: 0.7;
+}
+/* ==========================
+    ========== nav ==========
+    ========================= */
+nav {
+  justify-content: space-between;
+  margin: 10px 5vw;
+}
+nav img {
+  width: 150px;
+  object-fit: contain;
+}
+nav a {
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  color: hsl(322, 100%, 66%);
+  border: 1px solid hsl(322, 100%, 66%);
+}
+/* ==========================
+    ======== header =========
+    ========================= */
+header > div:first-child {
+  max-width: 700px;
+  margin: 140px auto 70px;
+  text-align: center;
+}
+header > div:first-child p {
+  width: 70%;
+  margin: 20px auto;
+  opacity: 0.7;
+}
+header > div:first-child a {
+  width: 40%;
+  background-color: hsl(322, 100%, 66%);
+  height: 50px;
+  border-radius: 25px;
+  margin: auto;
+  color: white;
+  font-weight: 600;
+}
+header > img {
+  width: 55%;
+  margin: auto;
+  min-width: 319.5px;
+}
+header > div:nth-of-type(2) {
+  justify-content: space-between;
+  margin: 70px auto;
+  width: 40%;
+  gap: 70px;
+}
+header > div:nth-of-type(2) span {
+  font-size: 60px;
+  font-weight: 700;
+}
+header > div:nth-of-type(2) p {
+  opacity: 0.7;
+}
+
+/* ==========================
+    ========= main ==========
+    ========================= */
+section {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 200px 0;
+  background-color: hsl(207, 100%, 98%);
+  padding: 50px 0;
+  position: relative;
+}
+section.grow::before,
+section.users::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 170px;
+  top: -140px;
+  background: url("images/bg-section-top-desktop-1.svg") no-repeat left;
+}
+section.grow::after,
+section.users::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 140px;
+  bottom: -130px;
+  background: url("images/bg-section-bottom-desktop-1.svg") no-repeat left;
+}
+section img {
+  width: 35%;
+  min-width: 319.5px;
+}
+section > div {
+  width: 35%;
+}
+section > div p {
+  opacity: 0.7;
+  margin-top: 20px;
+  font-weight: 400;
+}
+section.flow {
+  flex-direction: row;
+  background-color: unset;
+}
+main section:last-of-type {
+  background-color: unset;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  gap: 30px;
+}
+main section:last-of-type a {
+  background-color: hsl(322, 100%, 66%);
+  height: 50px;
+  border-radius: 25px;
+  margin: auto;
+  color: white;
+  width: 300px;
+  font-weight: 600;
+}
+/* ==========================
+    ========= footer ========
+    ========================= */
+footer {
+  background-color: hsl(192, 100%, 9%);
+  color: white;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 50px;
+  gap: 50px;
+  margin-top: 200px;
+  position: relative;
+}
+footer::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 170px;
+  top: -160px;
+  background: url("images/bg-footer-top-desktop.svg") no-repeat left;
+}
+footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 30%;
+}
+
+footer div div {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+footer > div:first-of-type > img {
+  width: 200px;
+  object-fit: contain;
+}
+footer p {
+  opacity: 0.7;
+  font-weight: 400;
+}
+footer > div:last-of-type input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+footer button {
+  width: 100px;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  background-color: hsl(322, 100%, 66%);
+  color: white;
+}
+footer i {
+  font-size: 25px;
+}
+footer i:hover {
+  color: hsl(322, 100%, 66%);
+}
+
+/* ==========================
+    ===== medium screen =====
+    ========================= */
+@media (max-width: 750px) {
+  header > div:nth-of-type(2) {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  footer > div {
+    width: 100%;
+  }
+  body {
+    padding: 0;
+  }
+}
+
+/* ==========================
+    ===== mobile screen =====
+    ========================= */
+@media (max-width: 375px) {
+  body {
+    min-width: 375px;
+    font-size: 0.9em;
+  }
+  header > div:first-child p {
+    width: 90%;
+  }
+  header > div:first-child a,
+  main section:last-of-type a {
+    min-width: 300px;
+  }
+  header > img {
+    width: 90%;
+  }
+  section:not(.flow):before {
+    background-image: url("images/bg-section-top-mobile-1.svg");
+  }
+  section:not(.flow)::after {
+    background-image: url("images/bg-section-bottom-mobile-1.svg");
+    height: 140px;
+    bottom: -90px;
+  }
+  section {
+    flex-direction: column;
+  }
+  section.flow {
+    flex-direction: column;
+  }
+  section > div {
+    width: 80%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  footer > div {
+    width: 100%;
+  }
+  footer > div:last-of-type div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  footer > div:last-of-type input {
+    width: 280px;
+  }
+  footer button {
+    width: 140px;
+  }
+  footer::before {
+    top: -110px;
+    background: url("images/bg-footer-top-mobile.svg") no-repeat left;
+  }
+}
